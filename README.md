@@ -1,7 +1,7 @@
 # Urban Festival
 
 Trio: Eduardo S. e Davi M. e Miguel V.
-Site publicado: [LINK DA VERCEL]
+Site publicado: https://festival-urban.vercel.app/
 
 # Briefing
 
