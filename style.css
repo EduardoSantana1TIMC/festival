@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050507;
+    color: #f7f7f5;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1200px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER — IGUAL EM TODAS
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    background: rgba(5, 5, 7, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 9999;
+}
+
+.nav {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #7b2cff;
+}
+
+.nav nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav nav a {
+    position: relative;
+    color: #96969f;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.nav nav a:hover {
+    color: #fff;
+}
+
+.nav nav a:not(.nav-ticket)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #7b2cff;
+    transition: 0.25s ease;
+}
+
+.nav nav a:not(.nav-ticket):hover::after {
+    width: 100%;
+}
+
+.nav-ticket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 20px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #7b2cff, #ff3158);
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+.nav-ticket:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(123, 44, 255, 0.3);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 680px;
+    padding-top: 78px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 75% 35%, rgba(123, 44, 255, 0.22), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(255, 49, 88, 0.12), transparent 35%),
+        #050507;
+}
+
+.hero-content {
+    width: min(1200px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 90px 0;
+}
+
+.hero-tag {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #7b2cff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(80px, 13vw, 180px);
+    line-height: 0.82;
+}
+
+.hero h1 span {
+    color: #7b2cff;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin-top: 35px;
+    color: #96969f;
+    font-size: 18px;
+}
+
+.hero-info {
+    display: flex;
+    gap: 40px;
+    margin-top: 35px;
+}
+
+.hero-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-info strong {
+    font-size: 20px;
+}
+
+.hero-info span {
+    color: #96969f;
+    font-size: 13px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #7b2cff, #ff3158);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(123, 44, 255, 0.3);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    padding: 110px 0;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #7b2cff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-header h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 0.9;
+}
+
+.section-header p {
+    max-width: 600px;
+    margin-top: 20px;
+    color: #96969f;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    min-height: 240px;
+    padding: 35px;
+    background: #111116;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(123,44,255,0.5);
+}
+
+.card-number {
+    color: #7b2cff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.card h3 {
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+.card p {
+    margin-top: 10px;
+    color: #96969f;
+}
+
+/* =========================
+   LINEUP
+========================= */
+
+.lineup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.artist-card {
+    overflow: hidden;
+    background: #111116;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(123,44,255,0.5);
+}
+
+.artist-image {
+    height: 330px;
+    overflow: hidden;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.artist-card:hover .artist-image img {
+    transform: scale(1.05);
+}
+
+.artist-info {
+    padding: 25px;
+}
+
+.artist-info span {
+    color: #7b2cff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.artist-info h3 {
+    margin-top: 8px;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+}
+
+.artist-info p {
+    margin-top: 5px;
+    color: #96969f;
+    font-size: 14px;
+}
+
+/* =========================
+   INGRESSOS
+========================= */
+
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ticket {
+    padding: 35px;
+    background: #111116;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+}
+
+.ticket.featured {
+    border-color: #7b2cff;
+    background: linear-gradient(145deg, rgba(123,44,255,0.15), #111116);
+}
+
+.ticket-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #7b2cff;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.ticket h3 {
+    font-size: 25px;
+}
+
+.price {
+    margin: 25px 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 45px;
+}
+
+.ticket ul {
+    list-style: none;
+}
+
+.ticket li {
+    padding: 9px 0;
+    color: #96969f;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-box {
+    padding: 30px;
+    background: #111116;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+}
+
+.info-box h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.info-box p {
+    color: #96969f;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.faq-item h3 {
+    font-size: 18px;
+}
+
+.faq-item p {
+    margin-top: 10px;
+    color: #96969f;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.contact-form {
+    max-width: 800px;
+    margin: 60px auto 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px 17px;
+    background: #111116;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #7b2cff;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 80px 50px;
+    text-align: center;
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(123,44,255,0.3), transparent 55%),
+        #111116;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.cta h2 {
+    margin: 15px 0 20px;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.9;
+}
+
+.cta h2 span {
+    color: #7b2cff;
+}
+
+.cta p {
+    max-width: 550px;
+    margin: 0 auto 30px;
+    color: #96969f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 60px 0 25px;
+    background: #08080b;
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin-top: 8px;
+    color: #96969f;
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #96969f;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-bottom p {
+    color: #66666e;
+    font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .container,
+    .hero-content {
+        width: min(100% - 40px, 1200px);
+    }
+
+    .nav nav {
+        gap: 15px;
+    }
+
+    .nav nav a {
+        font-size: 12px;
+    }
+
+    .cards,
+    .lineup-grid,
+    .ticket-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .header {
+        height: auto;
+    }
+
+    .nav {
+        min-height: 78px;
+        height: auto;
+        padding: 15px 0;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .nav-ticket {
+        min-height: 38px;
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding-top: 140px;
+    }
+
+    .hero-content {
+        padding: 70px 0;
+    }
+
+    .hero-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .cards,
+    .lineup-grid,
+    .ticket-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .artist-image {
+        height: 300px;
+    }
+
+    .cta {
+        padding: 60px 25px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}

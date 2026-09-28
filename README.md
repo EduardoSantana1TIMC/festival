@@ -3,7 +3,7 @@
 Trio: Eduardo S. e Davi M. e Miguel V.
 Site publicado: [LINK DA VERCEL]
 
-Briefing
+# Briefing
 
 Público: jovens de 18 a 30 anos que gostam de funk, trap, rap, festas e cultura urbana.
 
